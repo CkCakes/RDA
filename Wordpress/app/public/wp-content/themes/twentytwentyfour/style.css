@@ -1,15 +1,177 @@
-/*
-Theme Name: Twenty Twenty-Four
-Theme URI: https://wordpress.org/themes/twentytwentyfour/
-Author: the WordPress team
-Author URI: https://wordpress.org
-Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs, such as presenting a business, blogging and writing or showcasing work. A multitude of possibilities open up with just a few adjustments to color and typography. Twenty Twenty-Four comes with style variations and full page designs to help speed up the site building process, is fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
-Requires at least: 6.4
-Tested up to: 6.7
-Requires PHP: 7.0
-Version: 1.3
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentytwentyfour
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
-*/
+.site-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/images/rda-background.png') no-repeat center center/cover;
+    z-index: -1;
+}
+.homepage-bottom {
+    position: fixed;
+    /* bottom bar bit too big */
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1393/527;
+    background: url('assets/images/rda-background2.png') no-repeat bottom/contain;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 55px;
+}
+@media (max-width: 1000px) {
+    .homepage-bottom {
+        bottom: 0;
+    }
+}
+@media (max-width: 750px) {
+    .homepage-bottom {
+        width: 150%;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-item {
+    text-align: center;
+    padding: 0;
+}
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background-image: url("assets/images/placeholder.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    background-color: green;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-text {
+    font-family: 'Roboto', monospace;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: darkgreen;
+    max-width: 50%;
+    line-height: 1.5;
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 65px;
+}
+.item-button {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.item-button:hover {
+    background-color: darkgreen;
+}
+
+
+.top-bar {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #155d13;
+    color: #fff;
+    padding: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    overflow-x: hidden;
+}
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-logo {
+    font-family: Roboto, monospace;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+.top-bar-nav {
+    font-family: Roboto, monospace;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.top-bar-nav li {
+    margin: 0 10px;
+}
+.top-bar-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+.top-bar-nav a:hover {
+    text-decoration: underline;
+}
+
+/*search style*/
+.top-bar-search form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD700;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+/* searchbar input */
+.top-bar-search input[type="search"] {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-family: Roboto, monospace;
+    font-size: 1em;
+    color: #ffffff;
+    flex-grow: 1;
+    outline: none;
+    background: transparent;
+}
+.top-bar-search input[type="search"]::placeholder {
+    color: #a8a8a8;
+    font-family: Roboto, monospace;
+    font-size: 1em;
+}
+
+/* search button */
+.top-bar-search input[type="submit"] {
+    background-color: #ffc400;
+    border: none;
+    border-radius: 35%;
+    padding: 10px;
+    font-family: Roboto, monospace;
+    font-size: 1em;
+    color: #ffffff;
+
+    /* for hover */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.top-bar-search input[type="submit"]:hover {
+    background-color: #ffef86;
+}

@@ -8,6 +8,13 @@
  * @since Twenty Twenty-Four 1.0
  */
 
+remove_theme_support('block-templates'); /* so that WORDPRESS TEMPLATES ACTUALY WORK */
+
+function enqueue_theme_styles() {
+    wp_enqueue_style('main-styles', get_stylesheet_uri());
+}
+add_action('wp_enqueue_scripts', 'enqueue_theme_styles');
+
 /**
  * Register block styles.
  */
