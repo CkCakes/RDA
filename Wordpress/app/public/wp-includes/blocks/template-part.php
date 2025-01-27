@@ -70,7 +70,13 @@ function render_block_core_template_part( $attributes ) {
 			if ( 0 === validate_file( $attributes['slug'] ) ) {
 				$block_template = get_block_file_template( $template_part_id, 'wp_template_part' );
 
-				$content = $block_template->content;
+                if ( $block_template && isset( $block_template->content ) ) {
+                    $content = $block_template->content;
+                } else {
+                    // Handle the case where $block_template is not set properly
+                    $content = ''; // or provide a meaningful default value
+                }
+//				$content = $block_template->content;
 				if ( isset( $block_template->area ) ) {
 					$area = $block_template->area;
 				}
